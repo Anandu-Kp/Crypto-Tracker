@@ -1,0 +1,13 @@
+.grid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: 1.5rem;
+}
+
+.table-container {
+    width: 100%;
+
+}

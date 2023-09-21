@@ -1,0 +1,158 @@
+.main-flex {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.left-flex {
+    padding-top: 3rem;
+    padding-left: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.top-heading,
+.bottom-heading {
+    font-size: 6rem;
+    margin: 0;
+}
+
+.top-heading {
+    color: var(--white);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--white);
+}
+
+.bottom-heading {
+    color: var(--blue);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--blue);
+}
+
+.top-heading:hover {
+    color: var(--black);
+    transition: all .3s;
+}
+
+.main-flex-para {
+    font-size: 1rem;
+    color: var(--grey);
+    margin-bottom: 2.5rem;
+}
+
+.btn-flex {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+
+/* phone gradient */
+
+.right-flex {
+    width: 40%;
+    position: relative;
+    margin-left: 20%;
+    margin-top: 3rem;
+}
+
+.iphone {
+    position: absolute;
+    width: 300px;
+    z-index: 100;
+    left: 5%;
+
+}
+
+.gradient {
+    position: absolute;
+    width: 250px;
+    top: 5rem;
+    left: 15%;
+}
+
+@media screen and (max-width: 1200px) {
+
+
+    .right-flex {
+
+        margin-left: 15%;
+
+    }
+
+    .top-heading,
+    .bottom-heading {
+        font-size: 5.25rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .right-flex {
+
+        margin-left: 13%;
+
+    }
+
+    .iphone {
+
+        width: 250px;
+
+        left: 5%;
+
+    }
+
+    .gradient {
+
+        width: 200px;
+        top: 5rem;
+        left: 15%;
+    }
+
+
+    .top-heading,
+    .bottom-heading {
+        font-size: 4.75rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .main-flex {
+        flex-direction: column;
+
+    }
+
+    .left-flex {
+
+        align-items: center;
+
+    }
+
+    .main-flex-para {
+        font-size: .7rem;
+
+    }
+
+    .iphone {
+        width: 250px;
+        left: 45%;
+
+    }
+
+    .gradient {
+
+        width: 200px;
+        left: 65%;
+
+    }
+
+
+    .top-heading,
+    .bottom-heading {
+        font-size: 4rem;
+    }
+}

@@ -1,0 +1,14 @@
+.back-to-top-btn {
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--darkgrey);
+}

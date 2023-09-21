@@ -1,0 +1,103 @@
+.tableRow {
+    margin: 0 1rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    gap: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.tableRow:hover {
+    background-color: var(--darkgrey);
+}
+
+.tableRow td {
+    width: 20%;
+
+
+}
+
+.td-grid-logo {
+    margin: 0 !important;
+    width: 5rem !important;
+}
+
+.td-coin-logo {
+    width: 3rem;
+    height: 3rem;
+}
+
+.td-chip-flex {
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+.td-coin-price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+
+
+.mobile-total-volume {
+    display: none;
+}
+
+.td-total-volume {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .responsive-font-size {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .td-chip-graph {
+        display: none;
+    }
+
+    .responsive-font-size {
+        font-size: .7rem;
+    }
+
+    /* .tableRow td {} */
+}
+
+@media screen and (max-width: 800px) {
+    .td-coin-logo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .desktop-total-volume {
+        display: none;
+    }
+
+    .mobile-total-volume {
+        display: block;
+    }
+
+    .responsive-font-size {
+        font-size: .6rem;
+    }
+
+    .responsive-chip {
+        min-width: 30px;
+        font-size: 60%;
+    }
+
+    .marcket-cap {
+        display: none;
+    }
+}
