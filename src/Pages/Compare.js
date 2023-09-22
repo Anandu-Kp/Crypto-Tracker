@@ -10,6 +10,8 @@ import getCoinPrice from "../Functions/getCoinPrice";
 import settingChartdata from "../Functions/settingChartData";
 import LineChart from "../Components/Coin/LineChart";
 import BackToTop from "../Components/Common/BackToTop";
+import PriceToggleTypes from "../Components/Coin/Pricetypes";
+import CoinInfo from "../Components/Coin/CoinInfo";
 
 
 
@@ -42,7 +44,7 @@ function Comparepage() {
         compressObject(data2, setCoin2Data)
         const prices1 = await getCoinPrice(coin1, days, priceType);
         const prices2 = await getCoinPrice(coin2, days, priceType);
-        settingChartdata(setChartData, prices1, prices2);
+        settingChartdata(setChartData, prices1, prices2, data1, data2);
         setIsLoading(false)
 
 
@@ -54,21 +56,22 @@ function Comparepage() {
         if (isCoin1) {
 
             setCoin1(event.target.value)
-            const data = await getCoindata(coin1);
+            const data = await getCoindata(event.target.value);
             compressObject(data, setCoin1Data)
             const prices1 = await getCoinPrice(coin1, days, priceType);
             const prices2 = await getCoinPrice(coin2, days, priceType);
-            settingChartdata(setChartData, prices1, prices2);
+            settingChartdata(setChartData, prices1, prices2, data, coin2Data);
 
         }
         else {
 
             setCoin2(event.target.value)
-            const data = await getCoindata(coin2);
+            const data = await getCoindata(event.target.value);
             compressObject(data, setCoin2Data)
+            // console.log(data);
             const prices1 = await getCoinPrice(coin1, days, priceType);
             const prices2 = await getCoinPrice(coin2, days, priceType);
-            settingChartdata(setChartData, prices1, prices2);
+            settingChartdata(setChartData, prices1, prices2, coin1Data, data);
 
         }
 
@@ -82,9 +85,18 @@ function Comparepage() {
 
         const prices1 = await getCoinPrice(coin1, event.target.value, priceType);
         const prices2 = await getCoinPrice(coin2, event.target.value, priceType);
-        settingChartdata(setChartData, prices1, prices2);
+        settingChartdata(setChartData, prices1, prices2, coin1Data, coin2Data);
         console.log(event.target.value);
     }
+    const handlePriceTypeChange = async (event, newType) => {
+        setIsLoading(true);
+        console.log(newType);
+        setpriceType(newType);
+        const prices1 = await getCoinPrice(coin1, days, newType);
+        const prices2 = await getCoinPrice(coin2, days, newType);
+        settingChartdata(setChartData, prices1, prices2, coin1Data, coin2Data);
+        setIsLoading(false)
+    };
     return (
         <div><Header />
             <BackToTop />
@@ -97,11 +109,15 @@ function Comparepage() {
                         <SelectDays handleDaysChange={handleDaysChange} days={days} Pnot={"true"} />
                     </div>
                         <div className="grey-wrapper">
+                            <PriceToggleTypes priceType={priceType} handlePriceTypeChange={handlePriceTypeChange} />
                             < LineChart chartData={chartData} priceType={priceType} multiAxis={true} />
                         </div>
                     </div>
 
+
             }</>
+            <CoinInfo name={coin1Data.name} desc={coin1Data.desc} />
+            <CoinInfo name={coin2Data.name} desc={coin2Data.desc} />
         </div>
     )
 }

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Components/Common/Header";
-import MainComponent from "../Components/LandingPage/Main"
 import { useParams } from "react-router-dom";
 import compressObject from "../Functions/compressCoinObject";
 import ListComponent from "../Components/Dashboard/List";
-import axios from "axios";
 import Loader from "../Components/Common/Loader";
 import CoinInfo from "../Components/Coin/CoinInfo";
 import getCoindata from "../Functions/getCoinData";
@@ -14,8 +12,6 @@ import convertDate from "../Functions/convertDate";
 import SelectDays from "../Components/Coin/SelectDays";
 import settingChartdata from "../Functions/settingChartData";
 import PriceToggleTypes from "../Components/Coin/Pricetypes";
-import Footer from "../Components/Common/Footer";
-
 
 
 function CoinPage() {
@@ -76,7 +72,7 @@ function CoinPage() {
         const prices = await getCoinPrice(id, event.target.value, priceType)
         if (prices) {
             console.log(prices);
-            settingChartdata(setChartData, prices);
+            settingChartdata(setChartData, prices, coin);
             setIsLoading(false)
         }
 
@@ -89,7 +85,7 @@ function CoinPage() {
         setpriceType(newType);
         const prices = await getCoinPrice(id, days, newType)
         if (prices) {
-            settingChartdata(setChartData, prices);
+            settingChartdata(setChartData, prices, coin);
             setIsLoading(false)
         }
     };
@@ -110,7 +106,8 @@ function CoinPage() {
                             <PriceToggleTypes priceType={priceType} handlePriceTypeChange={handlePriceTypeChange} />
                             < LineChart chartData={chartData} priceType={priceType} />
                         </div>
-                        <CoinInfo name={coin.name} desc={coin.desc} /></div>
+                        <CoinInfo name={coin.name} desc={coin.desc} />
+                    </div>
             }</>
 
             }

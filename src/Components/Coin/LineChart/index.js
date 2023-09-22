@@ -22,7 +22,7 @@ export default function LineChart({ chartData, priceType, multiAxis }) {
             intersect: false,
         },
         scales: {
-            crypto1: {
+            y: {
                 type: "linear",
                 display: true,
                 position: "left",
@@ -34,7 +34,7 @@ export default function LineChart({ chartData, priceType, multiAxis }) {
                     }
                 }
             },
-            crypto1: multiAxis && {
+            y2: multiAxis && {
                 type: "linear",
                 display: true,
                 position: "right",

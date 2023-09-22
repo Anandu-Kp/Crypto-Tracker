@@ -14,8 +14,9 @@ export default function PriceToggleTypes({ priceType, handlePriceTypeChange }) {
                 onChange={handlePriceTypeChange}
                 aria-label="Platform"
                 sx={{
-                    "&.Mui-selected": {
+                    "& .Mui-selected": {
                         color: "var(--blue) !important",
+                        // backgroundColor: "var(--grey) !important",
                     },
                     borderColor: "var(--blue)",
                     border: "unset !important",
