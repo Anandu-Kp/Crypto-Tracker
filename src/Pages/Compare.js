@@ -34,12 +34,14 @@ function Comparepage() {
     }, [])
 
     async function getData() {
+        console.log("hello");
         setIsLoading(true)
         const myCoins = await get100Coins();
         if (myCoins) setAllCoins(myCoins);
 
         const data1 = await getCoindata(coin1);
         const data2 = await getCoindata(coin2);
+        console.log(data1);
         compressObject(data1, setCoin1Data)
         compressObject(data2, setCoin2Data)
         const prices1 = await getCoinPrice(coin1, days, priceType);
@@ -112,12 +114,13 @@ function Comparepage() {
                             <PriceToggleTypes priceType={priceType} handlePriceTypeChange={handlePriceTypeChange} />
                             < LineChart chartData={chartData} priceType={priceType} multiAxis={true} />
                         </div>
+                        <CoinInfo name={coin1Data.name} desc={coin1Data.desc} />
+                        <CoinInfo name={coin2Data.name} desc={coin2Data.desc} />
                     </div>
 
 
             }</>
-            <CoinInfo name={coin1Data.name} desc={coin1Data.desc} />
-            <CoinInfo name={coin2Data.name} desc={coin2Data.desc} />
+
         </div>
     )
 }
