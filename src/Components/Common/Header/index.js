@@ -20,6 +20,7 @@ function Header() {
             setDark();
         } else {
             setLight();
+
         }
     }, []);
 
@@ -108,7 +109,7 @@ function Header() {
                 </Link>
             </div>
             <div className="drawer-container">
-                <TemporaryDrawer />
+                <TemporaryDrawer handleThemeChange={handleThemeChange} darkMode={darkMode} MaterialUISwitch={MaterialUISwitch} />
             </div>
 
         </div>
