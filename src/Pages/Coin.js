@@ -98,7 +98,7 @@ function CoinPage() {
                 isLoading ? <Loader /> :
                     <div>
                         <div className="grey-wrapper" style={{ padding: "0rem 1.5rem" }}>
-                            <ListComponent coin={coin} />
+                            <ListComponent coin={coin} i={1} />
 
                         </div>
                         <div className="grey-wrapper">

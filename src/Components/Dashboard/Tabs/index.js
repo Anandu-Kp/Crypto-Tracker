@@ -8,7 +8,8 @@ import "./style.css"
 import GridComponent from "../Grid"
 import ListComponent from '../List';
 
-function TabComponent({ coins }) {
+function TabComponent({ coins, setWatchlistCoins }) {
+    // console.log(setIsRemoved);
     const [value, setValue] = React.useState('grid');
 
     const handleChange = (event, newValue) => {
@@ -45,7 +46,7 @@ function TabComponent({ coins }) {
                     <TabPanel value="grid">
                         <div className="grid-container">
                             {coins.map((coin, i) => {
-                                return (<GridComponent coin={coin} i={i} />)
+                                return (<GridComponent coin={coin} i={i} setWatchlistCoins={setWatchlistCoins} />)
                             })}
                         </div>
                     </TabPanel>
@@ -53,7 +54,7 @@ function TabComponent({ coins }) {
                         <table className='table-container'>
                             {coins.map((coin, id) =>
 
-                                (<ListComponent coin={coin} key={id} />)
+                                (<ListComponent coin={coin} i={id} setWatchlistCoins={setWatchlistCoins} />)
                             )}
                         </table></TabPanel>
                 </TabContext>
