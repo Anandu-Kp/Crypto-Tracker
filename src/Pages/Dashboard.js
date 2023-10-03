@@ -56,7 +56,7 @@ function Dashboardpage() {
                 <TabComponent coins={search == "" ? paginatedCoins : filteredCoins} />
                 {!search && <PaginationComponent page={page} handleChange={handleChange} />}
             </div>}
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }

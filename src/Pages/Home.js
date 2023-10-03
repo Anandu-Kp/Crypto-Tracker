@@ -11,6 +11,9 @@ function HomePage() {
             <Header />
             <MainComponent />
 
+            <Footer />
+
+
         </div>
     )
 }

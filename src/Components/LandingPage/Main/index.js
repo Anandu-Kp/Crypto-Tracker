@@ -59,7 +59,11 @@ function MainComponent() {
                     className="iphone" src={iphone} />
                 <img className="gradient" src={gradient} />
             </div>
+
         </div>
+
+
+
     )
 }
 
