@@ -51,13 +51,20 @@ function MainComponent() {
                 </motion.div>
             </div>
             <div className="right-flex">
+                <img className="gradient" src={gradient} />
                 <motion.img
+                    src={iphone}
+                    className="iphone"
                     initial={{ y: -10 }}
                     animate={{ y: 10 }}
-                    transition={{ type: "smooth", repeatType: "mirror", duration: 2, repeat: "infinity" }}
+                    transition={{
+                        type: "smooth",
+                        repeatType: "mirror",
+                        duration: 2,
+                        repeat: Infinity,
+                    }}
+                />
 
-                    className="iphone" src={iphone} />
-                <img className="gradient" src={gradient} />
             </div>
 
         </div>
