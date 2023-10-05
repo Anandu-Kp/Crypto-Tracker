@@ -1,10 +1,11 @@
 import convertDate from "./convertDate"
 
 export default function settingChartdata(setChartData, prices1, prices2, coin1, coin2) {
-
-    if (prices2) {
+    console.log(prices1.length);
+    if (prices2.length) {
         setChartData({
             labels: prices1.map((item) => convertDate(item[0])),
+
             datasets: [
                 {
                     label: coin1 ? coin1.name : "",
