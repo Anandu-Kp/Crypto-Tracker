@@ -4,6 +4,7 @@
     align-items: center;
     padding: 1rem;
     margin: 3rem;
+    margin-top: 5rem;
     height: auto;
     border-radius: 0.75rem;
     background: linear-gradient(90deg,
@@ -52,7 +53,7 @@
 @media only screen and (max-width: 800px) {
     .footer {
         margin: 1.5rem 0.5rem;
-        margin-bottom: 6rem;
+        margin-top: 30rem;
     }
 
     .footer h2 {
