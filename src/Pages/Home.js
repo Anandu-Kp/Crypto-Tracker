@@ -7,7 +7,7 @@ import Footer from "../Components/Common/Footer";
 
 function HomePage() {
     return (
-        <div>
+        <div class='homeComponent'>
             <Header />
             <MainComponent />
 
